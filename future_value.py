@@ -49,9 +49,10 @@ def run_unit_tests( run_tests = False ):
     if run_tests is False:
         return
     
-    ###########################################################################
+    ################
     # Unit Test 1: #
-    true_fv = 477958.108
+    ###########################################################################
+    true_fv = 477958.10884661495
     test_fv = get_future_value( principal       = 10000     ,
                                 no_of_year      = 10        ,
                                 current_income  = 70000     ,
@@ -59,10 +60,11 @@ def run_unit_tests( run_tests = False ):
                                 annual_increase = 0.03      ,
                                 interest        = 0.07      ,
                                 compound        = 'monthly' )
-    assert isclose(true_fv, test_fv, abs_tol=1e-3)
+    assert isclose(true_fv, test_fv, abs_tol=1e-8)
     
-    ###########################################################################
+    ################
     # Unit Test 2: #
+    ###########################################################################
     true_fv = 13922251.112204345
     test_fv = get_future_value( principal       = 10000   ,
                                 no_of_year      = 10      ,
@@ -72,6 +74,24 @@ def run_unit_tests( run_tests = False ):
                                 interest        = 0.07    ,
                                 compound        = 'daily' )
     assert isclose(true_fv, test_fv, abs_tol=1e-8)
+    
+    ################
+    # Unit Test 3: #
+    ###########################################################################
+    true_fv = 58571.76344632381
+    test_fv = get_future_value( principal       = 10000    ,
+                                no_of_year      = 10       ,
+                                current_income  = 70000    ,
+                                per_contri      = 0.40     ,
+                                annual_increase = 0.03     ,
+                                interest        = 0.07     ,
+                                compound        = 'yearly' )
+    assert isclose(true_fv, test_fv, abs_tol=1e-8)
+    
+    #############################
+    # Add more unit tests here! #
+    ###########################################################################
+    # ... #
 
 
 ################################################################################
