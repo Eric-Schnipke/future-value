@@ -23,7 +23,7 @@ def get_future_value( principal       ,  # investment value
                       per_contri      ,  # how many percent from current income for investing? (decimal)
                       annual_increase ,  # how many percent increase in income annually (decimal)
                       interest        ,  # annual percentage rate, for investment return. (decimal)
-                      compound        ): # 'daily', 'monthly', 'annually'
+                      compound        ): # 'daily', 'monthly', 'yearly'
       
     # Future value formula.
     # FV = princial*(1+r/k)^(n*k) + monthly_payment*((1+r/k)^(n*k)-1)*(1+r/k)/(r/k)
